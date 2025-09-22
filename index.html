@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <style>
+        <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
         
         :root {
@@ -232,6 +232,11 @@
             z-index: 1000;
         }
 
+        @keyframes fadeOut {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0); }
+        }
+
         @media (max-width: 768px) {
             .challenge-card:hover {
                 transform: none;
@@ -269,8 +274,8 @@
                 <a href="#vision" class="text-cyan-300 hover:text-cyan-100 transition-all duration-300 hover:text-glow">Visión</a>
                 <a href="#desafios" class="text-cyan-300 hover:text-cyan-100 transition-all duration-300 hover:text-glow">Desafíos</a>
                 <a href="#agenda" class="text-cyan-300 hover:text-cyan-100 transition-all duration-300 hover:text-glow">Agenda</a>
-                
-                <a href="#descripcion" class="text-cyan-300 hover:text-cyan-100 transition-all duration-300 hover:text-glow">Descripcion</a>
+                <a href="#descripcion" class="text-cyan-300 hover:text-cyan-100 transition-all duration-300 hover:text-glow">Descripción</a>
+                <a href="#proyectos" class="text-cyan-300 hover:text-cyan-100 transition-all duration-300 hover:text-glow">Proyectos</a>
             </div>
             
             <div class="md:hidden flex items-center">
@@ -286,8 +291,8 @@
                 <a href="#vision" class="mobile-menu-link text-2xl my-4 text-white hover:text-cyan-300">Visión</a>
                 <a href="#desafios" class="mobile-menu-link text-2xl my-4 text-white hover:text-cyan-300">Desafíos</a>
                 <a href="#agenda" class="mobile-menu-link text-2xl my-4 text-white hover:text-cyan-300">Agenda</a>
-                
-                <a href="#descripcion" class="mobile-menu-link text-2xl my-4 text-white hover:text-cyan-300">Descripcion</a>
+                <a href="#descripcion" class="mobile-menu-link text-2xl my-4 text-white hover:text-cyan-300">Descripción</a>
+                <a href="#proyectos" class="mobile-menu-link text-2xl my-4 text-white hover:text-cyan-300">Proyectos</a>
             </div>
         </div>
     </header>
@@ -639,17 +644,271 @@
                     </p>
 
                     <h4 class="text-2xl font-bold text-cyan-300 mb-4">Descripción de las Dinámicas</h4>
-                    <p class="text-cyan-100 leading-relaxed mb-8">
-                        A. Desafío del Arquitecto de Soluciones (3er y 5to Semestre)
-                        <br>
-                        B. AI Proto-Sprint (7mo y 8vo Semestre)
-                    </p>
-
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="glass-card p-6 rounded-xl">
+                            <h5 class="text-xl font-bold text-cyan-400 mb-3 flex items-center">
+                                <i class="fas fa-drafting-compass mr-2"></i>
+                                A. Desafío del Arquitecto de Soluciones (3er y 5to Semestre)
+                            </h5>
+                            <p class="text-cyan-100 text-sm leading-relaxed">
+                                Los participantes diseñarán soluciones tecnológicas innovadoras que aborden problemáticas sociales complejas. Los proyectos deben estar orientados a la erradicación de la pobreza (ODS 1), la promoción de la salud y el bienestar (ODS 3) y el desarrollo de ciudades y comunidades sostenibles (ODS 11). Se evaluará la viabilidad, el impacto y la escalabilidad de las propuestas para generar un cambio positivo y duradero.
+                            </p>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-xl">
+                            <h5 class="text-xl font-bold text-purple-400 mb-3 flex items-center">
+                                <i class="fas fa-code mr-2"></i>
+                                B. AI Proto-Sprint (7mo y 8vo Semestre)
+                            </h5>
+                            <p class="text-purple-100 text-sm leading-relaxed">
+                                En esta dinámica, los estudiantes desarrollarán prototipos de inteligencia artificial para resolver desafíos específicos. Los proyectos se centrarán en la creación de herramientas que mejoren la calidad de vida en las ciudades (ODS 11), ofrezcan soluciones de salud accesibles y personalizadas (ODS 3) y contribuyan a la reducción de la desigualdad económica (ODS 1). El objetivo es generar soluciones funcionales y de alto impacto en un corto período de tiempo.
+                            </p>
+                        </div>
+                    </div>
 
                     <h4 class="text-2xl font-bold text-cyan-300 mb-4">Resultados Esperados</h4>
                     <p class="text-cyan-100 leading-relaxed">
                         Al finalizar el evento, se espera que los estudiantes hayan fortalecido su confianza para resolver problemas complejos, adquirido experiencia práctica con tecnologías de IA de última generación y desarrollado habilidades de colaboración y comunicación.
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="py-20 relative">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-4xl md:text-6xl font-bold font-['Orbitron'] mb-6">
+                        <span class="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent neon-text">
+                            PROYECTOS INNOVADORES
+                        </span>
+                    </h3>
+                    <p class="text-xl text-green-100 max-w-4xl mx-auto mb-8">
+                        Soluciones tecnológicas revolucionarias alineadas con los Objetivos de Desarrollo Sostenible
+                    </p>
+                    
+                    <div class="flex justify-center mb-12">
+                        <div class="glass-card rounded-full p-2 flex items-center space-x-4">
+                            <div class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-red-500 to-pink-500 rounded-full">
+                                <div class="w-3 h-3 bg-white rounded-full"></div>
+                                <span class="text-white font-bold text-sm">ODS 1</span>
+                            </div>
+                            <div class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-green-500 to-teal-500 rounded-full">
+                                <div class="w-3 h-3 bg-white rounded-full"></div>
+                                <span class="text-white font-bold text-sm">ODS 3</span>
+                            </div>
+                            <div class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full">
+                                <div class="w-3 h-3 bg-white rounded-full"></div>
+                                <span class="text-white font-bold text-sm">ODS 11</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                    
+                    <article class="glass-card p-6 rounded-2xl magnetic-hover hologram-effect group relative overflow-hidden">
+                        <div class="absolute top-4 right-4">
+                            <div class="flex items-center space-x-1">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="text-center mb-4">
+                            <div class="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-purple-400 to-pink-500 rounded-xl flex items-center justify-center morphing-shape">
+                                <i class="fas fa-brain text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-purple-300 leading-tight">Asistente Virtual para Salud Mental Juvenil</h4>
+                        </div>
+                        <p class="text-purple-100 text-sm leading-relaxed mb-4">
+                            Chatbot conversacional que brinde apoyo inmediato en salud mental a adolescentes y jóvenes, proporcionando recursos y técnicas de manejo del estrés.
+                        </p>
+                        <div class="flex justify-center">
+                            <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-teal-500 rounded-full text-xs font-bold text-white">ODS 3</span>
+                        </div>
+                    </article>
+
+                    
+                    <article class="glass-card p-6 rounded-2xl magnetic-hover hologram-effect group relative overflow-hidden">
+                        <div class="absolute top-4 right-4">
+                            <div class="flex items-center space-x-1">
+                                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                                <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="text-center mb-4">
+                            <div class="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-green-400 to-blue-500 rounded-xl flex items-center justify-center morphing-shape">
+                                <i class="fas fa-recycle text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-green-300 leading-tight">Sistema Inteligente de Gestión de Residuos</h4>
+                        </div>
+                        <p class="text-green-100 text-sm leading-relaxed mb-4">
+                            Red de sensores IoT en contenedores para optimizar rutas de recolección, reduciendo costos operativos y huella de carbono urbana.
+                        </p>
+                        <div class="flex justify-center space-x-2">
+                            <span class="px-2 py-1 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full text-xs font-bold text-white">ODS 11</span>
+                            <span class="px-2 py-1 bg-gradient-to-r from-red-500 to-pink-500 rounded-full text-xs font-bold text-white">ODS 1</span>
+                        </div>
+                    </article>
+
+                    
+                    <article class="glass-card p-6 rounded-2xl magnetic-hover hologram-effect group relative overflow-hidden">
+                        <div class="absolute top-4 right-4">
+                            <div class="flex items-center space-x-1">
+                                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="text-center mb-4">
+                            <div class="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-blue-400 to-purple-500 rounded-xl flex items-center justify-center morphing-shape">
+                                <i class="fas fa-map-marked-alt text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-blue-300 leading-tight">Navegador Urbano Accesible</h4>
+                        </div>
+                        <p class="text-blue-100 text-sm leading-relaxed mb-4">
+                            Aplicación de navegación adaptada para personas con movilidad reducida, calculando rutas que eviten obstáculos urbanos.
+                        </p>
+                        <div class="flex justify-center space-x-2">
+                            <span class="px-2 py-1 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full text-xs font-bold text-white">ODS 11</span>
+                            <span class="px-2 py-1 bg-gradient-to-r from-green-500 to-teal-500 rounded-full text-xs font-bold text-white">ODS 3</span>
+                        </div>
+                    </article>
+
+                    
+                    <article class="glass-card p-6 rounded-2xl magnetic-hover hologram-effect group relative overflow-hidden">
+                        <div class="absolute top-4 right-4">
+                            <div class="flex items-center space-x-1">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="text-center mb-4">
+                            <div class="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-teal-400 to-green-500 rounded-xl flex items-center justify-center morphing-shape">
+                                <i class="fas fa-wind text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-teal-300 leading-tight">Red de Monitoreo de Calidad del Aire</h4>
+                        </div>
+                        <p class="text-teal-100 text-sm leading-relaxed mb-4">
+                            Red de sensores de bajo costo para medir calidad del aire en tiempo real, con alertas para poblaciones vulnerables.
+                        </p>
+                        <div class="flex justify-center space-x-2">
+                            <span class="px-2 py-1 bg-gradient-to-r from-green-500 to-teal-500 rounded-full text-xs font-bold text-white">ODS 3</span>
+                            <span class="px-2 py-1 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full text-xs font-bold text-white">ODS 11</span>
+                        </div>
+                    </article>
+
+                    
+                    <article class="glass-card p-6 rounded-2xl magnetic-hover hologram-effect group relative overflow-hidden">
+                        <div class="absolute top-4 right-4">
+                            <div class="flex items-center space-x-1">
+                                <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="text-center mb-4">
+                            <div class="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center morphing-shape">
+                                <i class="fas fa-piggy-bank text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-yellow-300 leading-tight">Tutor de Alfabetización Financiera</h4>
+                        </div>
+                        <p class="text-yellow-100 text-sm leading-relaxed mb-4">
+                            Bot educativo personalizado que proporciona lecciones sobre finanzas personales a personas de bajos ingresos.
+                        </p>
+                        <div class="flex justify-center">
+                            <span class="px-3 py-1 bg-gradient-to-r from-red-500 to-pink-500 rounded-full text-xs font-bold text-white">ODS 1</span>
+                        </div>
+                    </article>
+
+                    
+                    <article class="glass-card p-6 rounded-2xl magnetic-hover hologram-effect group relative overflow-hidden">
+                        <div class="absolute top-4 right-4">
+                            <div class="flex items-center space-x-1">
+                                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="text-center mb-4">
+                            <div class="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-xl flex items-center justify-center morphing-shape">
+                                <i class="fas fa-mobile-alt text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-indigo-300 leading-tight">Plataforma de Reporte Ciudadano</h4>
+                        </div>
+                        <p class="text-indigo-100 text-sm leading-relaxed mb-4">
+                            Aplicación inteligente para reportar problemas urbanos que clasifica y canaliza automáticamente cada reporte.
+                        </p>
+                        <div class="flex justify-center">
+                            <span class="px-3 py-1 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full text-xs font-bold text-white">ODS 11</span>
+                        </div>
+                    </article>
+
+                    
+                    <article class="glass-card p-6 rounded-2xl magnetic-hover hologram-effect group relative overflow-hidden">
+                        <div class="absolute top-4 right-4">
+                            <div class="flex items-center space-x-1">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="text-center mb-4">
+                            <div class="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center morphing-shape">
+                                <i class="fas fa-heartbeat text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-emerald-300 leading-tight">Quiosco de Telemedicina Rural</h4>
+                        </div>
+                        <p class="text-emerald-100 text-sm leading-relaxed mb-4">
+                            Quiosco solar de bajo costo para comunidades rurales con dispositivos médicos y videoconsultas.
+                        </p>
+                        <div class="flex justify-center space-x-2">
+                            <span class="px-2 py-1 bg-gradient-to-r from-green-500 to-teal-500 rounded-full text-xs font-bold text-white">ODS 3</span>
+                            <span class="px-2 py-1 bg-gradient-to-r from-red-500 to-pink-500 rounded-full text-xs font-bold text-white">ODS 1</span>
+                        </div>
+                    </article>
+
+                    
+                    <article class="glass-card p-6 rounded-2xl magnetic-hover hologram-effect group relative overflow-hidden">
+                        <div class="absolute top-4 right-4">
+                            <div class="flex items-center space-x-1">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="text-center mb-4">
+                            <div class="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-rose-400 to-pink-500 rounded-xl flex items-center justify-center morphing-shape">
+                                <i class="fas fa-running text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-rose-300 leading-tight">Sistema de Prescripción de Ejercicio</h4>
+                        </div>
+                        <p class="text-rose-100 text-sm leading-relaxed mb-4">
+                            Plataforma que genera planes de ejercicio personalizados basados en historial clínico y capacidades físicas.
+                        </p>
+                        <div class="flex justify-center">
+                            <span class="px-3 py-1 bg-gradient-to-r from-green-500 to-teal-500 rounded-full text-xs font-bold text-white">ODS 3</span>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="text-center mt-16">
+                    <div class="glass-card p-8 rounded-3xl max-w-4xl mx-auto">
+                        <h4 class="text-2xl font-bold text-green-300 mb-4 flex items-center justify-center">
+                            <i class="fas fa-lightbulb mr-3 text-yellow-400"></i>
+                            Impacto Transformador
+                        </h4>
+                        <p class="text-green-100 leading-relaxed text-lg">
+                            Cada proyecto representa una oportunidad única para que los participantes desarrollen 
+                            <span class="text-green-400 font-bold">soluciones reales</span> que pueden impactar positivamente a 
+                            millones de personas, mientras adquieren experiencia práctica con las tecnologías más avanzadas del mercado.
+                        </p>
+                        
+                        <div class="grid md:grid-cols-3 gap-6 mt-8">
+                            <div class="text-center">
+                                <div class="text-3xl font-black text-cyan-400">8</div>
+                                <p class="text-cyan-300 font-medium">Proyectos Innovadores</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-black text-purple-400">3</div>
+                                <p class="text-purple-300 font-medium">ODS Impactados</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-black text-pink-400">∞</div>
+                                <p class="text-pink-300 font-medium">Posibilidades de Crecimiento</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
