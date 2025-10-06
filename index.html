@@ -2,251 +2,301 @@
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <link rel="icon" href="https://supervision-docente.joannesystem.com/public/assets/images/logos/favicon.ico" type="image/x-icon">
     <title>AI Dev Challenge 2025</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-        <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --neural-blue: #0066ff;
-            --neural-purple: #8b5cf6;
-            --neural-pink: #ec4899;
-        }
+      <style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
-        body {
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 25%, #2d1b69 50%, #4c1d95 75%, #7c2d92 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --neural-blue: #0066ff;
+    --neural-purple: #8b5cf6;
+    --neural-pink: #ec4899;
+}
 
-        .neural-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.1;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-        }
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
 
-        .neon-text {
-            text-shadow: 0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor;
-        }
+body {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 25%, #2d1b69 50%, #4c1d95 75%, #7c2d92 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
 
-        .floating-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(40px);
-            animation: float 6s ease-in-out infinite;
-        }
+.neural-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+}
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-20px) scale(1.1); }
-        }
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
 
-        .pulse-ring {
-            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
-        }
+.neon-text {
+    text-shadow: 0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor;
+}
 
-        @keyframes pulse-ring {
-            0% { transform: scale(0.8); opacity: 1; }
-            100% { transform: scale(2.5); opacity: 0; }
-        }
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
+}
 
-        .data-stream {
-            position: absolute;
-            width: 2px;
-            height: 100px;
-            background: linear-gradient(to bottom, transparent, #00f2fe, transparent);
-            animation: data-flow 3s linear infinite;
-        }
+@keyframes float {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-20px) scale(1.1); }
+}
 
-        @keyframes data-flow {
-            0% { transform: translateY(-100px); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(100vh); opacity: 0; }
-        }
+.pulse-ring {
+    animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    max-width: 100%;
+}
 
-        .hologram-effect {
-            position: relative;
-            overflow: hidden;
-        }
+@keyframes pulse-ring {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
 
-        .hologram-effect::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.3), transparent);
-            animation: hologram-scan 3s ease-in-out infinite;
-        }
+.data-stream {
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, #00f2fe, transparent);
+    animation: data-flow 3s linear infinite;
+}
 
-        @keyframes hologram-scan {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
+@keyframes data-flow {
+    0% { transform: translateY(-100px); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
 
-        .morphing-shape {
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            animation: morph 8s ease-in-out infinite;
-        }
+.hologram-effect {
+    position: relative;
+    overflow: hidden;
+}
 
-        @keyframes morph {
-            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-        }
+.hologram-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.3), transparent);
+    animation: hologram-scan 3s ease-in-out infinite;
+}
 
-        .typing-animation {
-            overflow: hidden;
-            border-right: 3px solid #00f2fe;
-            white-space: nowrap;
-            animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
+@keyframes hologram-scan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
 
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
+.morphing-shape {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: morph 8s ease-in-out infinite;
+}
 
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #00f2fe; }
-        }
+@keyframes morph {
+    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
 
-        .neural-network {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
+.typing-animation {
+    overflow: hidden;
+    border-right: 3px solid #00f2fe;
+    white-space: nowrap;
+    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
 
-        .neuron {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #00f2fe;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #00f2fe;
-            animation: neuron-pulse 2s ease-in-out infinite alternate;
-        }
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
 
-        @keyframes neuron-pulse {
-            0% { opacity: 0.3; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1.5); }
-        }
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #00f2fe; }
+}
 
-        .challenge-card {
-            transform-style: preserve-3d;
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-        }
+.neural-network {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
 
-        .challenge-card:hover {
-            transform: rotateY(10deg) rotateX(5deg) translateZ(50px);
-        }
+.neuron {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #00f2fe;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00f2fe;
+    animation: neuron-pulse 2s ease-in-out infinite alternate;
+}
 
-        .timeline-3d {
-            perspective: 1000px;
-        }
+@keyframes neuron-pulse {
+    0% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.5); }
+}
 
-        .timeline-item-3d {
-            transform-style: preserve-3d;
-            transition: all 0.5s ease;
-        }
+.challenge-card {
+    transform-style: preserve-3d;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
 
-        .timeline-item-3d:hover {
-            transform: translateZ(30px) rotateY(-5deg);
-        }
+.challenge-card:hover {
+    transform: rotateY(10deg) rotateX(5deg) translateZ(50px);
+}
 
-        .particle-field {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
+.timeline-3d {
+    perspective: 1000px;
+}
 
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: #00f2fe;
-            border-radius: 50%;
-            animation: particle-float 20s linear infinite;
-        }
+.timeline-item-3d {
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
 
-        @keyframes particle-float {
-            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100px) translateX(100px); opacity: 0; }
-        }
+.timeline-item-3d:hover {
+    transform: translateZ(30px) rotateY(-5deg);
+}
 
-        .magnetic-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+.particle-field {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
 
-        .magnetic-hover:hover {
-            transform: scale(1.05) translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.3);
-        }
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #00f2fe;
+    border-radius: 50%;
+    animation: particle-float 20s linear infinite;
+}
 
-        .text-glow {
-            text-shadow: 0 0 20px currentColor;
-        }
+@keyframes particle-float {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100px) translateX(100px); opacity: 0; }
+}
 
-        .hero-bg {
-            background: radial-gradient(ellipse at center, rgba(103, 126, 234, 0.15) 0%, transparent 70%),
-                        linear-gradient(135deg, #0f0f23 0%, #1a1a3e 25%, #2d1b69 50%, #4c1d95 75%, #7c2d92 100%);
-        }
+.magnetic-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-        .scroll-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #00f2fe, #667eea, #f093fb);
-            transform-origin: left;
-            transform: scaleX(0);
-            transition: transform 0.1s ease;
-            z-index: 1000;
-        }
+.magnetic-hover:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 242, 254, 0.3);
+}
 
-        @keyframes fadeOut {
-            0% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: scale(0); }
-        }
+.text-glow {
+    text-shadow: 0 0 20px currentColor;
+}
 
-        @media (max-width: 768px) {
-            .challenge-card:hover {
-                transform: none;
-            }
-            
-            .timeline-item-3d:hover {
-                transform: none;
-            }
-        }
-    </style>
+.hero-bg {
+    background: radial-gradient(ellipse at center, rgba(103, 126, 234, 0.15) 0%, transparent 70%),
+                linear-gradient(135deg, #0f0f23 0%, #1a1a3e 25%, #2d1b69 50%, #4c1d95 75%, #7c2d92 100%);
+}
+
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #00f2fe, #667eea, #f093fb);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.1s ease;
+    z-index: 1000;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0); }
+}
+
+@media (max-width: 768px) {
+    .challenge-card:hover {
+        transform: none;
+    }
+    
+    .timeline-item-3d:hover {
+        transform: none;
+    }
+
+    .floating-orb {
+        display: none;
+    }
+
+    section {
+        overflow: hidden;
+    }
+
+    .container {
+        overflow: hidden;
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .pulse-ring {
+        display: none;
+    }
+
+    .data-stream {
+        display: none;
+    }
+
+    .neuron {
+        display: none;
+    }
+
+    #hero h2 {
+        font-size: 2.5rem !important;
+    }
+
+    #hero p {
+        font-size: 1rem !important;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+</style>
 </head>
 <body class="text-white">
     
@@ -286,15 +336,18 @@
             </div>
         </nav>
         
-        <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-screen z-50" style="background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2d1b69 100%);">
-            <div class="glass-card h-full flex flex-col items-center justify-center space-y-6 px-6">
-                <a href="#hero" class="mobile-menu-link text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent hover:scale-110 transition-all duration-300">Inicio</a>
-                <a href="#vision" class="mobile-menu-link text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-110 transition-all duration-300">Visión</a>
-                <a href="#desafios" class="mobile-menu-link text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent hover:scale-110 transition-all duration-300">Desafíos</a>
-                <a href="#agenda" class="mobile-menu-link text-2xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent hover:scale-110 transition-all duration-300">Agenda</a>
-                <a href="#descripcion" class="mobile-menu-link text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent hover:scale-110 transition-all duration-300">Descripción</a>
-                <a href="#proyectos" class="mobile-menu-link text-2xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent hover:scale-110 transition-all duration-300">Proyectos</a>
-                <a href="https://aidev-schedule.joannesystem.com" target="_blank" class="mobile-menu-link text-xl font-bold px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full hover:scale-110 transition-all duration-300 mt-4">
+
+
+
+<div id="mobile-menu" class="hidden md:hidden fixed inset-0 w-screen h-screen z-40" style="background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2d1b69 100%);">
+            <div class="glass-card h-full w-full flex flex-col items-center justify-center space-y-6 px-6">
+                <a href="#hero" class="mobile-menu-link text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent hover:scale-110 transition-all duration-300 text-center">Inicio</a>
+                <a href="#vision" class="mobile-menu-link text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-110 transition-all duration-300 text-center">Visión</a>
+                <a href="#desafios" class="mobile-menu-link text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent hover:scale-110 transition-all duration-300 text-center">Desafíos</a>
+                <a href="#agenda" class="mobile-menu-link text-2xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent hover:scale-110 transition-all duration-300 text-center">Agenda</a>
+                <a href="#descripcion" class="mobile-menu-link text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent hover:scale-110 transition-all duration-300 text-center">Descripción</a>
+                <a href="#proyectos" class="mobile-menu-link text-2xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent hover:scale-110 transition-all duration-300 text-center">Proyectos</a>
+                <a href="https://aidev-schedule.joannesystem.com" target="_blank" class="mobile-menu-link text-xl font-bold px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full hover:scale-110 transition-all duration-300 mt-4 text-center">
                     <i class="fas fa-sign-in-alt mr-2"></i>Iniciar Sesión
                 </a>
             </div>
